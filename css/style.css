@@ -14,13 +14,23 @@
     margin: 20px
 }
 
+img {
+    display: block;
+    margin: auto;
+    width: 65%;
+    justify-content: center;
+}
+
 @media screen and (min-width: 500px) {
     .grid_container {
-        grid-template-columns: repeat(2 1fr);
-        grid-area: span;
+        grid-template-columns: 1 fr;
         justify-content: center;
     }
 
+    .information {
+        display: grid;
+        grid-template-columns: repeat(2 1fr);
+    }
     .contact_information {
         grid-column-start: 1;
     }
@@ -33,7 +43,18 @@
 
 @media screen and (min-width: 768px) {
     .grid_container {
+        display: grid;
         grid-template-columns: repeat(2 50%);
-        grid-template-rows: 1fr;
-}
+    }
+
+    img {
+        grid-column: 1;
+    }
+
+    .information {
+        grid-column: 2;
+        display: flex;
+        flex-direction: column;
+    }
+
 }
